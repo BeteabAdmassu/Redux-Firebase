@@ -7,67 +7,67 @@ import { btnValue } from "../store/btn-slice";
 import IdGenerator from "./IdGenerator";
 
 const input = css`
-  display: block;
-  margin: 0 10px 30px 10px;
-  width: 85%;
-  height: 30px;
-  border-radius: 10px;
-  border: solid 0.5px;
-  padding: 0 10px;
-  font-size: 1rem;
-  color: #000;
-  background-color: #fff;
-  
-  &:focus {
-    outline: none;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    margin: 0 0 20px 0;
-  }
+display: block;
+margin: 0 10px 30px 10px;
+width: 85%;
+height: 30px;
+border-radius: 10px;
+border: solid 0.5px;
+padding: 0 10px;
+font-size: 1rem;
+color: #000;
+background-color: #fff;
+&:focus {
+  outline: none;
+}
+@media (max-width: 768px) {
+  width: 65%;
+}
 `;
 
 const label = css`
-  display: block;
-  width: 80%;
-  height: 30px;
-  border-radius: 5px;
-  border: none;
-  padding: 0 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #000;
-  background-color: #fff;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-bottom: 10px;
-  }
+display: block;
+text-align: left;
+width: 80%;
+height: 30px;
+border-radius: 5px;
+border: none;
+padding: 0 10px;
+font-size: 1rem;
+font-weight: bold;
+color: #000;
+background-color: #fff;
+&:focus {
+  outline: none;
+}
+@media (max-width: 768px) {
+  width: 70%;
+}
 `;
 
 const button = css`
-  margin: 10px;
-  margin-left: 30px;
-  width:  90px;
-  height: 30px;
-  border-radius: 10px;
-  border: solid 0.5px;
-  padding: 0 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #000;
-  background-color: #fff;
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    background-color: #000;
-    color: #fff;
-  }
+margin: 10px;
+margin-left: 30px;
+width: 5rem;
+width-min: 91px;
+height: 30px;
+border-radius: 10px;
+border: solid 0.5px;
+padding: 0 10px;
+font-size: 1rem;
+font-weight: bold;
+color: #000;
+background-color: #fff;
+&:focus {
+  outline: none;
+}
+&:hover {
+  background-color: #000;
+  color: #fff;
+}
 
   @media (max-width: 768px) {
-    margin: 10px 0;
+    margin: 10px ;
     width: 100%;
   }
 `;
@@ -135,7 +135,7 @@ export default function AddMusic(props) {
           Rating
         </label>
         <input required css={input} type="number" name="rating" id="rating" min={1} max={5} />
-        <div css={{ display: "flex", justifyContent: "center" }}>
+        {/* <div css={{ display: "flex", justifyContent: "center" }}> */}
           <button css={button} type="submit">
             Add
           </button>
@@ -146,7 +146,7 @@ export default function AddMusic(props) {
         <button css={button} type="button" onClick={cancelHandler}>
           Cancel
         </button>
-        </div>
+        {/* </div> */}
       </form>
     </>
   );

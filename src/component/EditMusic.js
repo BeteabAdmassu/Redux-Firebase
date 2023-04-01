@@ -21,14 +21,13 @@ const input = css`
     outline: none;
   }
   @media (max-width: 768px) {
-    width: 100%;
+    width: 65%;
   }
 `;
 
 const label = css`
   display: block;
   text-align: left;
-  // margin: 10px;
   width: 80%;
   height: 30px;
   border-radius: 5px;
@@ -42,7 +41,7 @@ const label = css`
     outline: none;
   }
   @media (max-width: 768px) {
-    width: 100%;
+    width: 70%;
   }
 `;
 
