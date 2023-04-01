@@ -1,21 +1,16 @@
 /** @jsxImportSource @emotion/react */
 
-// import { useState } from "react";
 import { css } from "@emotion/react";
 import img from "../assets/Music.jpg";
 import Add from "../assets/Add.png";
-import Modal from "./Modal";
 import AddMusic from "./AddMusic";
-
 import { btnValue } from "../store/btn-slice";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Header() {
-
   const dispatch = useDispatch();
   const clicked = useSelector((state) => state.btnStore.addBtnValue);
 
-  
   const onClickHandler = () => {
     dispatch(btnValue.addBtnClicked());
   };
@@ -44,7 +39,8 @@ export default function Header() {
   `;
 
   return (
-    <div>
+    <>
+      {clicked && <AddMusic/>}
       <header
         css={css`
           height: 10em;
@@ -90,11 +86,6 @@ export default function Header() {
           />
         </button>
       </header>
-      {clicked && (
-        <Modal>
-          <AddMusic />
-        </Modal>
-      )}
-    </div>
+    </>
   );
 }

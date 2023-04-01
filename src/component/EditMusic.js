@@ -5,12 +5,11 @@ import { dataActions } from "../store/data-slice";
 import { css } from "@emotion/react";
 import Modal from "./Modal";
 
-
 const input = css`
   display: block;
-  margin: 0 10px 30px 10px;
+  margin: 0 10px 25px 10px;
   width: 85%;
-  height: 30px;
+  height: 25px;
   border-radius: 10px;
   border: solid 0.5px;
   padding: 0 10px;
@@ -70,14 +69,30 @@ const button = css`
     margin-left: 0;
   }
 `;
+const form = css`
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+const heading = css`
+  color: #000;
+  font-weight: bold;
+  text-align: center;
 
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
 
 export default function EditMusic(props) {
   const dispatch = useDispatch();
-  const musicData = useSelector((state) => state.DataStore.data.find((item) => item.id === props.id));
+  const musicData = useSelector((state) =>
+    state.DataStore.data.find((item) => item.id === props.id)
+  );
   const cancelHandler = () => {
     dispatch(btnValue.editBtnClicked());
-
   };
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -94,29 +109,22 @@ export default function EditMusic(props) {
       rating: rating,
     };
     dispatch(dataActions.editData(editedMusic));
-    dispatch({ type: "EDIT_DATA" , payload: {id: props.keys , update: editedMusic} })
+    dispatch({
+      type: "EDIT_DATA",
+      payload: { id: props.keys, update: editedMusic },
+    });
     dispatch(btnValue.editBtnClicked());
   };
 
-
   return (
     <Modal>
-      <h3
-        css={css`
-          color: #000;
-          font-weight: bold;
-          margin: 10px;
-          text-align: center;
-        `}
-      >
-        Edit music
-      </h3>
-      <form onSubmit={onSubmitHandler}>
+      <h3 css={heading}>Edit music</h3>
+      <form css={form} onSubmit={onSubmitHandler}>
         <label css={label} htmlFor="song">
           Song
         </label>
         <input
-        required
+          required
           defaultValue={musicData.song}
           css={input}
           type="text"
@@ -128,7 +136,7 @@ export default function EditMusic(props) {
           Artist
         </label>
         <input
-         required
+          required
           defaultValue={musicData.artist}
           css={input}
           type="text"
@@ -140,7 +148,7 @@ export default function EditMusic(props) {
           Genre
         </label>
         <input
-        required
+          required
           defaultValue={musicData.genre}
           css={input}
           type="text"
@@ -151,8 +159,8 @@ export default function EditMusic(props) {
         <label css={label} htmlFor="rating">
           Rating
         </label>
-        <input 
-        required
+        <input
+          required
           type={"number"}
           defaultValue={musicData.rating}
           css={input}
@@ -160,11 +168,8 @@ export default function EditMusic(props) {
           id="rating"
           min={1}
           max={5}
-         
-
-          
         />
-        <button css={button} type="submit"  >
+        <button css={button} type="submit">
           Save
         </button>
         <button css={button} type="button" onClick={cancelHandler}>

@@ -16,7 +16,7 @@ const Backdrop = (props) => {
         top: 0;
         left: 0;
         width: 100%;
-        height: 120vh;
+        height: 150vh;
         z-index: 20;
         background-color: rgba(0, 0, 0, 0.8);
       `}
@@ -37,17 +37,29 @@ const ModalOverlay = (props) => {
   return (
     <div
       css={css`
-        position: fixed;
-        top: 300px;
-        left: 50vw;
-        transform: translate(-50%, -50%);
-        width: 30vw;
-        background-color: white;
-        padding: 1rem;
-        border-radius: 14px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-        z-index: 30;
-        animation: slide-down 300ms ease-out forwards;
+           position: fixed;
+           top: 300px;
+           left: 50vw;
+           transform: translate(-50%, -50%);
+           width: 50vw;
+           height: 120vh;
+           background-color: white;
+           padding: 1rem;
+           border-radius: 14px;
+           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+           z-index: 40; 
+           animation: slide-down 300ms ease-out forwards;
+    @keyframes slide-down {'
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
       `}
     >
       <div>{props.children}</div>
@@ -59,7 +71,7 @@ const Modal = (props) => {
   return (
     <Fragment>
       <Backdrop />
-      <ModalOverlay>{props.children}</ModalOverlay>,
+      <ModalOverlay>{props.children}</ModalOverlay>
     </Fragment>
   );
 };
