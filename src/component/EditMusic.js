@@ -4,6 +4,8 @@ import { btnValue } from "../store/btn-slice";
 import { dataActions } from "../store/data-slice";
 import { css } from "@emotion/react";
 import Modal from "./Modal";
+
+
 const input = css`
   display: block;
   margin: 0 10px 30px 10px;
@@ -18,7 +20,11 @@ const input = css`
   &:focus {
     outline: none;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
+
 const label = css`
   display: block;
   text-align: left;
@@ -34,6 +40,9 @@ const label = css`
   background-color: #fff;
   &:focus {
     outline: none;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 
@@ -56,6 +65,10 @@ const button = css`
   &:hover {
     background-color: #000;
     color: #fff;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
   }
 `;
 

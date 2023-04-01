@@ -21,6 +21,18 @@ const listStyle = css`
   justify-content: center;
   align-items: center;
 
+  media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  media (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  
+
 `;
 const itemStyle = css`
   margin: 10px;

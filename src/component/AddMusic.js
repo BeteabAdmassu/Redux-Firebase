@@ -17,13 +17,19 @@ const input = css`
   font-size: 1rem;
   color: #000;
   background-color: #fff;
+  
   &:focus {
     outline: none;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
 `;
+
 const label = css`
   display: block;
-  // margin: 10px;
   width: 80%;
   height: 30px;
   border-radius: 5px;
@@ -33,8 +39,10 @@ const label = css`
   font-weight: bold;
   color: #000;
   background-color: #fff;
-  &:focus {
-    outline: none;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 10px;
   }
 `;
 
@@ -56,6 +64,30 @@ const button = css`
   &:hover {
     background-color: #000;
     color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    margin: 10px 0;
+    width: 100%;
+  }
+`;
+
+const form = css`
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const heading = css`
+  color: #000;
+  font-weight: bold;
+  margin: 10px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
   }
 `;
 
@@ -85,25 +117,16 @@ export default function AddMusic(props) {
 
   return (
     <>
-      <h3
-        css={css`
-          color: #000;
-          font-weight: bold;
-          margin: 10px;
-          text-align: center;
-        `}
-      >
-        Add music
-      </h3>
-      <form onSubmit={onSubmitHandler}>
+      <h3 css={heading}>Add music</h3>
+      <form css={form} onSubmit={onSubmitHandler}>
         <label css={label} htmlFor="song">
           Song
         </label>
-        <input required css={input} type="text" name="song" id="song" maxLength={20}  />
+        <input required css={input} type="text" name="song" id="song" maxLength={20} />
         <label css={label} htmlFor="artist">
           Artist
         </label>
-        <input required css={input} type="text" name="artist" id="artist" maxLength={15}  />
+        <input required css={input} type="text" name="artist" id="artist" maxLength={15} />
         <label css={label} htmlFor="genre">
           Genre
         </label>
@@ -111,16 +134,19 @@ export default function AddMusic(props) {
         <label css={label} htmlFor="rating">
           Rating
         </label>
-        <input required css={input} type="number" name="rating" id="rating"  min={1} max={5} />
-        <button css={button} type="submit">
-          Add
-        </button>
+        <input required css={input} type="number" name="rating" id="rating" min={1} max={5} />
+        <div css={{ display: "flex", justifyContent: "center" }}>
+          <button css={button} type="submit">
+            Add
+          </button>
+        
         <button css={button} type="reset">
           Reset
         </button>
         <button css={button} type="button" onClick={cancelHandler}>
           Cancel
         </button>
+        </div>
       </form>
     </>
   );
