@@ -105,6 +105,7 @@ export default function EditMusic(props) {
           Song
         </label>
         <input
+        required
           defaultValue={musicData.song}
           css={input}
           type="text"
@@ -116,6 +117,7 @@ export default function EditMusic(props) {
           Artist
         </label>
         <input
+         required
           defaultValue={musicData.artist}
           css={input}
           type="text"
@@ -127,6 +129,7 @@ export default function EditMusic(props) {
           Genre
         </label>
         <input
+        required
           defaultValue={musicData.genre}
           css={input}
           type="text"
@@ -138,6 +141,7 @@ export default function EditMusic(props) {
           Rating
         </label>
         <input 
+        required
           type={"number"}
           defaultValue={musicData.rating}
           css={input}

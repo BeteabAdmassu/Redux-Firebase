@@ -99,19 +99,19 @@ export default function AddMusic(props) {
         <label css={label} htmlFor="song">
           Song
         </label>
-        <input css={input} type="text" name="song" id="song" maxLength={20}  />
+        <input required css={input} type="text" name="song" id="song" maxLength={20}  />
         <label css={label} htmlFor="artist">
           Artist
         </label>
-        <input css={input} type="text" name="artist" id="artist" maxLength={15}  />
+        <input required css={input} type="text" name="artist" id="artist" maxLength={15}  />
         <label css={label} htmlFor="genre">
           Genre
         </label>
-        <input css={input} type="text" name="genre" id="genre" maxLength={10} />
+        <input required css={input} type="text" name="genre" id="genre" maxLength={10} />
         <label css={label} htmlFor="rating">
           Rating
         </label>
-        <input css={input} type="number" name="rating" id="rating"  min={1} max={5} />
+        <input required css={input} type="number" name="rating" id="rating"  min={1} max={5} />
         <button css={button} type="submit">
           Add
         </button>
