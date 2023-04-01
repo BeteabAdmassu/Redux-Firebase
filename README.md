@@ -1,5 +1,5 @@
 ## Description
-- https://music-list-beteabadmassu.vercel.app/
+- https://music-lists-beteabadmassu.vercel.app/
 
 This project is a project that showcases the use of Emotion, React, Redux, Redux-saga, and Firebase to build a web application. The application is a simple web page that allows users to view, add, edit, and delete data from a database.
 
