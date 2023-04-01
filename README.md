@@ -25,7 +25,7 @@ To get started with this project, follow the steps below:
 
 1. Clone the repository:
 
-git clone <repository_url>
+git clone <https://github.com/BeteabAdmassu/Redux-Firebase-CRUD.git>
 
 2. Navigate into the project directory:
 
