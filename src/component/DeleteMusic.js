@@ -40,6 +40,7 @@ export default function DeleteMusic(props) {
   };
 
   return (
+    <div css = {css`overflow: hidden;`}>
     <Modal>
       <h3
         css={css`
@@ -59,5 +60,6 @@ export default function DeleteMusic(props) {
         </button>
       </div>
     </Modal>
+    </div>
   );
 }

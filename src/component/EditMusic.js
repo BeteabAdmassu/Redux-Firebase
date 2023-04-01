@@ -101,6 +101,7 @@ export default function EditMusic(props) {
 
 
   return (
+    <div css={css`overflow:'hidden';`}>
     <Modal>
       <h3
         css={css`
@@ -173,5 +174,6 @@ export default function EditMusic(props) {
         </button>
       </form>
     </Modal>
+    </div>
   );
 }

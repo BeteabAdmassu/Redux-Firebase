@@ -116,7 +116,7 @@ export default function AddMusic(props) {
 
 
   return (
-    <>
+    <div css={css` overflow:'hidden'; `}>
       <h3 css={heading}>Add music</h3>
       <form css={form} onSubmit={onSubmitHandler}>
         <label css={label} htmlFor="song">
@@ -135,7 +135,6 @@ export default function AddMusic(props) {
           Rating
         </label>
         <input required css={input} type="number" name="rating" id="rating" min={1} max={5} />
-        {/* <div css={{ display: "flex", justifyContent: "center" }}> */}
           <button css={button} type="submit">
             Add
           </button>
@@ -146,8 +145,7 @@ export default function AddMusic(props) {
         <button css={button} type="button" onClick={cancelHandler}>
           Cancel
         </button>
-        {/* </div> */}
       </form>
-    </>
+    </div>
   );
 }
