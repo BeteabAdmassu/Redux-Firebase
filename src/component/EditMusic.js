@@ -82,7 +82,6 @@ export default function EditMusic(props) {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const Id = musicData.id;
-   // const Key = musicData.key;
     const song = e.target.song.value;
     const artist = e.target.artist.value;
     const genre = e.target.genre.value;
@@ -101,7 +100,6 @@ export default function EditMusic(props) {
 
 
   return (
-    <div css={css`overflow:'hidden';`}>
     <Modal>
       <h3
         css={css`
@@ -174,6 +172,5 @@ export default function EditMusic(props) {
         </button>
       </form>
     </Modal>
-    </div>
   );
 }

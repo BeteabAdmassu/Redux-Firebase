@@ -116,7 +116,7 @@ export default function AddMusic(props) {
 
 
   return (
-    <div css={css` overflow:'hidden'; `}>
+    <>
       <h3 css={heading}>Add music</h3>
       <form css={form} onSubmit={onSubmitHandler}>
         <label css={label} htmlFor="song">
@@ -146,6 +146,6 @@ export default function AddMusic(props) {
           Cancel
         </button>
       </form>
-    </div>
+    </>
   );
 }
